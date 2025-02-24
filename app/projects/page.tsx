@@ -1,8 +1,7 @@
 import { Metadata } from "next";
-import ProjectSection from "@components/sections/ProjectSection";
-import BackToTop from "@components/buttons/BackToTop";
-import Footer from "@components/footer/Footer";
-
+import ProjectSection from "@frontend/layouts/sections/ProjectSection";
+import BackToTop from "@frontend/layouts/buttons/BackToTop";
+import Footer from "@frontend/layouts/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Projects",

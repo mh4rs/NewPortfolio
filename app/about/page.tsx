@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import BackToTop from "@components/buttons/BackToTop";
-import AboutSection from "@components/sections/AboutSection";
-import TopicSection from "@components/sections/TopicSection";
-import TechStackSection from "@components/sections/TechStackSection";
-import ContactSection from "@components/sections/ContactSection";
-import Footer from "@components/footer/Footer";
+import BackToTop from "@frontend/layouts/buttons/BackToTop";
+import AboutSection from "@frontend/layouts/sections/AboutSection";
+import TopicSection from "@frontend/layouts/sections/TopicSection";
+import TechStackSection from "@frontend/layouts/sections/TechStackSection";
+import ContactSection from "@frontend/layouts/sections/ContactSection";
+import Footer from "@frontend/layouts/footer/Footer";
 
 export const metadata: Metadata = {
   title: "About",
