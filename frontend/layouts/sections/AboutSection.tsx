@@ -1,5 +1,5 @@
 import { useFetch } from "@backend/hooks/useFetch";
-import { AboutType } from "@backend/ts/shared-types/types";
+import { AboutType } from "@shared/types";
 import Picture from "@frontend/components/common/Picture";
 import Section from "@frontend/components/common/Section";
 import Heading from "@frontend/components/Heading";
@@ -7,28 +7,28 @@ import AboutUi from "@frontend/components/AboutUi";
 import LoadingSpinner from "@frontend/components/LoadingSpinner";
 import ImageCredits from "@frontend/components/ImageCredits";
 
+const renderAbout = (abouts: AboutType[]) => {
+  if (abouts) {
+    return abouts.map((about: AboutType) => (
+      <AboutUi
+        key={about._id}
+        displayName={about.displayName}
+        desc={about.desc}
+        fullName={about.fullName}
+        nickname={about.nickname}
+        age={about.age}
+        birthday={about.birthday}
+        sex={about.sex}
+        nationality={about.nationality}
+        status={about.status}
+        languages={about.languages}
+      />
+    ));
+  } else return <LoadingSpinner size="100px" fontSize="64px" />;
+};
+
 export default async function AboutSection() {
   const { abouts } = await useFetch("/api/abouts");
-
-  const renderAbout = () => {
-    if (abouts) {
-      return abouts.map((about: AboutType) => (
-        <AboutUi
-          key={about._id}
-          displayName={about.displayName}
-          desc={about.desc}
-          fullName={about.fullName}
-          nickname={about.nickname}
-          age={about.age}
-          birthday={about.birthday}
-          sex={about.sex}
-          nationality={about.nationality}
-          status={about.status}
-          languages={about.languages}
-        />
-      ));
-    } else return <LoadingSpinner size="100px" fontSize="64px" />;
-  };
 
   return (
     <Section id={"about"}>
@@ -49,7 +49,7 @@ export default async function AboutSection() {
           />
         </div>
         <div className="about-me flex flex-col gap-[30px] ">
-          {renderAbout()}
+          {renderAbout(abouts)}
         </div>
       </div>
     </Section>

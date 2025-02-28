@@ -6,84 +6,62 @@ import { FaGift } from "react-icons/fa6";
 import { FaGamepad } from "react-icons/fa6";
 import { FaCode } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa6";
-import { EventType } from "@backend/ts/shared-types/types";
+import { EventType, TimelineType } from "@shared/types";
 import { useFetch } from "@backend/hooks/useFetch";
 import { sortDateByDescendingOrder } from "@frontend/ts/utils/sortDate";
 import Section from "@frontend/components/common/Section";
 import Heading from "@frontend/components/Heading";
 import EventBtn from "@frontend/layouts/buttons/EventBtn";
 
-export default async function TimelineSection() {
-  const { timelines } = await useFetch("/api/timelines");
+const renderTimeline = (timelines: TimelineType[]) => {
+  let typeIcon;
 
-  const renderTimeline = () => {
-    let typeIcon;
-
-    if (timelines) {
-      return timelines
-        .sort(sortDateByDescendingOrder)
-        .map((event: EventType) => {
-          switch (event.type) {
-            case "present":
-              typeIcon = <FaGift />;
-              break;
-            case "gift":
-              typeIcon = <FaGift />;
-              break;
-            case "born":
-              typeIcon = <FaBaby />;
-              break;
-            case "birthday":
-              typeIcon = <FaCakeCandles />;
-              break;
-            case "game":
-              typeIcon = <FaGamepad />;
-              break;
-            case "programming":
-              typeIcon = <FaCode />;
-              break;
-            case "school":
-              typeIcon = <IoSchool />;
-              break;
-            case "religion":
-              typeIcon = <FaChurch />;
-              break;
-            default:
-              typeIcon = <FaMoon />;
-              break;
-          }
-          return (
-            <EventBtn
-              key={event._id}
-              _id={event._id}
-              typeIcon={typeIcon}
-              date={event.date}
-              note={event.note}
-              message={event.message}
-            />
-          );
-        });
-    }
-  };
-
-  return (
-    <>
-      <Section id="timeline">
-        <Heading
-          name="Timeline"
-          desc="A simple timeline of events that I want to share with you, everyone."
+  if (timelines) {
+    return timelines.sort(sortDateByDescendingOrder).map((event: EventType) => {
+      switch (event.type) {
+        case "present":
+          typeIcon = <FaGift />;
+          break;
+        case "gift":
+          typeIcon = <FaGift />;
+          break;
+        case "born":
+          typeIcon = <FaBaby />;
+          break;
+        case "birthday":
+          typeIcon = <FaCakeCandles />;
+          break;
+        case "game":
+          typeIcon = <FaGamepad />;
+          break;
+        case "programming":
+          typeIcon = <FaCode />;
+          break;
+        case "school":
+          typeIcon = <IoSchool />;
+          break;
+        case "religion":
+          typeIcon = <FaChurch />;
+          break;
+        default:
+          typeIcon = <FaMoon />;
+          break;
+      }
+      return (
+        <EventBtn
+          key={event._id}
+          _id={event._id}
+          typeIcon={typeIcon}
+          date={event.date}
+          note={event.note}
+          message={event.message}
         />
-        <div className="relative">
-          {TimelineTip("present")}
-          {renderTimeline()}
-          {TimelineTip("past")}
-        </div>
-      </Section>
-    </>
-  );
-}
+      );
+    });
+  }
+};
 
-function TimelineTip(time: string) {
+const TimelineTip = (time: string) => {
   return (
     <div
       className={`absolute ${
@@ -96,5 +74,25 @@ function TimelineTip(time: string) {
         } w-4 h-4 rounded-full bg-primary dark:bg-gray-800`}
       ></div>
     </div>
+  );
+};
+
+export default async function TimelineSection() {
+  const { timelines } = await useFetch("/api/timelines");
+
+  return (
+    <>
+      <Section id="timeline">
+        <Heading
+          name="Timeline"
+          desc="A simple timeline of events that I want to share with you, everyone."
+        />
+        <div className="relative">
+          {TimelineTip("present")}
+          {renderTimeline(timelines)}
+          {TimelineTip("past")}
+        </div>
+      </Section>
+    </>
   );
 }
