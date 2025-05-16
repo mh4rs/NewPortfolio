@@ -112,7 +112,7 @@ const HomePage = async () => {
                   GitHub
                 </a>
                 <a
-                  href="/resumeee.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
