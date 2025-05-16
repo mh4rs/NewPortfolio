@@ -22,23 +22,23 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Moonbami",
-    template: "Moonbami | %s",
+    default: "Meriam",
+    template: "Meriam | %s",
   },
   description:
     "Pursuing a career for being a developer. Still a novice, but making progress on a daily basis.",
   manifest: "/manifest.json",
   keywords: [
-    "moonbami",
+    "Meriam",
     "portfolio",
     "dev-portfolio",
     "developer",
-    "jam moonbami",
+    "Meriam",
   ],
   authors: [
-    { name: "Jam Moonbami" },
+    { name: "Meriam" },
     {
-      name: "Jam Moonbami",
+      name: "Meriam",
       url: "https://github.com/MoonbamiOfficial",
     },
   ],
