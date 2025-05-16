@@ -4,12 +4,22 @@ import Link from "next/link";
 import { Url } from "next/dist/shared/lib/router/router";
 
 type Props = {
+  /** The URL or path to link to */
   href: Url;
+  /** Accessible label for the link */
   ariaLabel: string;
-  text: string;
+  /** The text to render inside the link */
+  name: string;
+  /** Optional extra CSS classes (e.g. "active") */
+  className?: string;
 };
 
-export default function Anchor({ href, ariaLabel, text }: Props) {
+export default function Anchor({
+  href,
+  ariaLabel,
+  name,
+  className = "",
+}: Props) {
   return (
     <Link
       href={href}
@@ -21,9 +31,10 @@ export default function Anchor({ href, ariaLabel, text }: Props) {
         !focus:bg-transparent !focus:text-white
         !active:bg-transparent !active:text-white
         !ring-0 !outline-none
+        ${className}
       `}
     >
-      {text}
+      {name}
     </Link>
   );
 }
