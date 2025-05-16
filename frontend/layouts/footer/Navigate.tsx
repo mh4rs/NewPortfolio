@@ -9,7 +9,7 @@ export default function Navigate() {
   const isLinkActive = (path: any) => path === pathName;
 
   return (
-    <div className={`flex flex-col gap-1`}>
+    <div className="flex flex-col gap-1">
       <h2 className="font-semibold text-lg capitalize">navigate</h2>
       {NavLinks.map((link, id) => (
         <Anchor
@@ -18,7 +18,7 @@ export default function Navigate() {
           text={link.name}
           customStyles={
             isLinkActive(link.path)
-              ? "bg-primary-light dark:bg-primary px-2"
+              ? "px-2" // no color, no glow
               : ""
           }
         />

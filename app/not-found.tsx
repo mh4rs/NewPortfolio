@@ -22,7 +22,7 @@ export default function NotFound() {
           alt=""
           width={"3000"}
           height={"3000"}
-          className="w-[150px] h-[150px] lg:w-[300px] lg:h-[300px] object-cover rounded-full"
+          className="w-[150px] h-[150px] lg:w-[300px] lg:h-[300px] object-contain rounded-full"
         />
       </section>
     </div>

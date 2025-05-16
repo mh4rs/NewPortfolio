@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-export type AboutType = {
-  _id?: string;
+export interface AboutType {
+  _id: string;
   displayName: string;
   desc: string;
   fullName: string;
@@ -11,8 +11,9 @@ export type AboutType = {
   sex: string;
   nationality: string;
   status: string;
-  languages: string;
-};
+  languages: string[];
+}
+
 
 export type ProjectType = {
   _id?: string;

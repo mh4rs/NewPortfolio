@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import cn from "@frontend/ts/utils/cn";
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
   "flex justify-center items-center border-2 transform",
   {
     variants: {
@@ -27,13 +27,20 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants> & {};
+/**
+ * Exported interface for external usage (e.g. ThemeSwitchBtn).
+ */
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {}
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+/**
+ * Button Component
+ */
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {
     return (
       <button
@@ -42,7 +49,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  },
+  }
 );
 
-export { Button, buttonVariants };
+Button.displayName = "Button";

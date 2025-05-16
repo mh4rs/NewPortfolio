@@ -8,31 +8,31 @@ const config: Config = {
     "./frontend/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      white: colors.white,
-      black: colors.black,
-      transparent: colors.transparent,
-      primary: "#0487E2",
-      "primary-dark": "#0074CF",
-      "primary-light": "#0793F0",
-      secondary: "#CC5200",
-      "secondary-light": "#DD7804",
-      background: "#FAFAFA",
-      "dark-background": "#121212",
-      surface: "#FDFCFA",
-      "dm-surface": "#1F1F1F",
-      "dm-surface-dark": "#151515",
-      "dm-surface-light": "#2D2D2D",
-      error: "#EA3C53",
-      "on-primary": colors.white,
-      "on-primary-dark": colors.white,
-      "on-background": colors.black,
-      "on-surface": colors.black,
-      "on-error": colors.white,
-      // foreign colors - colors that are not part of the project
-      github: "#2DBA4E",
-    },
     extend: {
+      colors: {
+        white: colors.white,
+        black: colors.black,
+        transparent: colors.transparent,
+        primary: "#0487E2",
+        "primary-dark": "#0074CF",
+        "primary-light": "#0793F0",
+        secondary: "#CC5200",
+        "secondary-light": "#DD7804",
+        background: "#FAFAFA",
+        "dark-background": "#121212",
+        surface: "#FDFCFA",
+        "dm-surface": "#1F1F1F",
+        "dm-surface-dark": "#151515",
+        "dm-surface-light": "#2D2D2D",
+        error: "#EA3C53",
+        "on-primary": colors.white,
+        "on-primary-dark": colors.white,
+        "on-background": colors.black,
+        "on-surface": colors.black,
+        "on-error": colors.white,
+        // foreign colors - colors that are not part of the project
+        github: "#2DBA4E",
+      },
       container: {
         center: true,
       },
@@ -50,4 +50,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

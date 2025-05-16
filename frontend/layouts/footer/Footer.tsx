@@ -11,8 +11,8 @@ export default function Footer() {
   return (
     <>
       <WaveOpacity />
-      <div className="absolute w-full bg-primary dark:bg-primary-dark text-white">
-        <section id="footer" className="container">
+      <div className="absolute w-full bg-primary dark:bg-rose-500 text-white">
+      <footer id="footer" className="container">
           <div className="py-[64px] px-[8vw] text-on-primary">
             <div className="flex flex-col lg:flex-row justify-between items-center mb-8">
               <h1 className="text-3xl xl:text-4xl font-bold text-center lg:text-left tracking-tight mb-8">
@@ -38,11 +38,11 @@ export default function Footer() {
                 ))}
               </div>
               <p className="min-w-[300px] text-center md:text-left">
-                &#169; {year.getFullYear().toString()} Moonbami. Philippines.{" "}
+                &#169; {year.getFullYear().toString()} Harissa. Michigan.{" "}
               </p>
             </div>
           </div>
-        </section>
+        </footer>
       </div>
     </>
   );

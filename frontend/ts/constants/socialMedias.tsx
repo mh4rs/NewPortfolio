@@ -1,47 +1,24 @@
-import { SiAnilist } from "react-icons/si";
 import {
-  FaFacebook,
-  FaInstagram,
+  FaEnvelope,
   FaGithub,
-  FaXTwitter,
-  FaRedditAlien,
+  FaLinkedin,
   FaYoutube,
 } from "react-icons/fa6";
 
 export const socialMedias = [
   {
-    href: "https://anilist.co/user/Moonbami/",
-    text: "AniList",
-    icon: <SiAnilist />,
+    href: "mailto:mharissa@umich.edu",
+    text: "Mail",
+    icon: <FaEnvelope />,
   },
   {
-    href: "https://www.facebook.com/moonbamidesu",
-    text: "Facebook",
-    icon: <FaFacebook />,
-  },
-  {
-    href: "https://www.instagram.com/moonbamidesu/",
-    text: "Instagram",
-    icon: <FaInstagram />,
-  },
-  {
-    href: "https://github.com/MoonbamiOfficial",
+    href: "https://github.com/mh4rs",
     text: "GitHub",
     icon: <FaGithub />,
   },
   {
-    href: "https://twitter.com/MoonbamiOffcl",
-    text: "Twitter X",
-    icon: <FaXTwitter />,
-  },
-  {
-    href: "https://www.reddit.com/user/MoonbamiOfficial/",
-    text: "Reddit",
-    icon: <FaRedditAlien />,
-  },
-  {
-    href: "https://www.youtube.com/@Moonbami",
-    text: "YouTube",
-    icon: <FaYoutube />,
+    href: "https://www.linkedin.com/in/meriam-harissa-b02847360/",
+    text: "LinkedIn",
+    icon: <FaLinkedin />,
   },
 ];

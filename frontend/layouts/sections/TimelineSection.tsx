@@ -1,98 +1,25 @@
-import { FaBaby } from "react-icons/fa6";
-import { FaCakeCandles } from "react-icons/fa6";
-import { IoSchool } from "react-icons/io5";
-import { FaChurch } from "react-icons/fa6";
-import { FaGift } from "react-icons/fa6";
-import { FaGamepad } from "react-icons/fa6";
-import { FaCode } from "react-icons/fa6";
-import { FaMoon } from "react-icons/fa6";
-import { EventType, TimelineType } from "@shared/types";
-import { useFetch } from "@backend/hooks/useFetch";
-import { sortDateByDescendingOrder } from "@frontend/ts/utils/sortDate";
+import { Mail, Github, Linkedin } from "lucide-react";
 import Section from "@frontend/components/common/Section";
 import Heading from "@frontend/components/Heading";
-import EventBtn from "@frontend/layouts/buttons/EventBtn";
 
-const renderTimeline = (timelines: TimelineType[]) => {
-  let typeIcon;
-
-  if (timelines) {
-    return timelines.sort(sortDateByDescendingOrder).map((event: EventType) => {
-      switch (event.type) {
-        case "present":
-          typeIcon = <FaGift />;
-          break;
-        case "gift":
-          typeIcon = <FaGift />;
-          break;
-        case "born":
-          typeIcon = <FaBaby />;
-          break;
-        case "birthday":
-          typeIcon = <FaCakeCandles />;
-          break;
-        case "game":
-          typeIcon = <FaGamepad />;
-          break;
-        case "programming":
-          typeIcon = <FaCode />;
-          break;
-        case "school":
-          typeIcon = <IoSchool />;
-          break;
-        case "religion":
-          typeIcon = <FaChurch />;
-          break;
-        default:
-          typeIcon = <FaMoon />;
-          break;
-      }
-      return (
-        <EventBtn
-          key={event._id}
-          _id={event._id}
-          typeIcon={typeIcon}
-          date={event.date}
-          note={event.note}
-          message={event.message}
-        />
-      );
-    });
-  }
-};
-
-const TimelineTip = (time: string) => {
+export default function ContactSection() {
   return (
-    <div
-      className={`absolute ${
-        time == "present" ? "top-0" : "bottom-0"
-      }  h-full w-[4px] bg-primary dark:bg-gray-800 ml-[36px] -z-10 flex justify-center`}
-    >
-      <div
-        className={`absolute ${
-          time == "present" ? "top-0" : "bottom-0"
-        } w-4 h-4 rounded-full bg-primary dark:bg-gray-800`}
-      ></div>
-    </div>
-  );
-};
+    <Section id="contact">
+      <Heading name="Contact" desc="Let's connect and build something great." />
 
-export default async function TimelineSection() {
-  const { timelines } = await useFetch("/api/timelines");
+      <div className="max-w-xl mx-auto text-center mt-3">
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+          Thank you for visiting my portfolio! If you're interested in collaborating, have questions, or just want to say hello, feel free to reach out at{" "}
+          <a
+            href="mailto:mharissa@umich.edu"
+            className="text-blue-600 dark:text-rose-500 font-semibold underline hover:opacity-80"
+          >
+            mharissa@umich.edu
+          </a>
+          .
+        </p>
 
-  return (
-    <>
-      <Section id="timeline">
-        <Heading
-          name="Timeline"
-          desc="A simple timeline of events that I want to share with you, everyone."
-        />
-        <div className="relative">
-          {TimelineTip("present")}
-          {renderTimeline(timelines)}
-          {TimelineTip("past")}
-        </div>
-      </Section>
-    </>
+      </div>
+    </Section>
   );
 }
