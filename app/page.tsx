@@ -1,5 +1,5 @@
-import { Suspense } from "react";
-import { Mail, Github, FileText } from "lucide-react";
+ import { Suspense } from "react";
+import { FiMail, FiGithub, FiFileText } from "react-icons/fi";
 import {
   SiReact,
   SiTypescript,
@@ -14,7 +14,7 @@ import {
   SiMysql,
 } from "react-icons/si";
 import LandingSkeleton from "@frontend/layouts/skeletons/LandingSkeleton";
-// REMOVED the import for resumePDF since it's now in public
+
 
 const HomePage = async () => {
   return (
@@ -91,7 +91,7 @@ const HomePage = async () => {
                     transition-colors duration-300
                   "
                 >
-                  <Mail className="w-5 h-5 transition-colors duration-300" />
+                  <FiMail className="w-5 h-5 transition-colors duration-300" />
                   Email Me
                 </a>
                 <a
@@ -108,7 +108,7 @@ const HomePage = async () => {
                     transition-colors duration-300
                   "
                 >
-                  <Github className="w-5 h-5 transition-colors duration-300" />
+                  <FiGithub className="w-5 h-5 transition-colors duration-300" />
                   GitHub
                 </a>
                 <a
@@ -124,7 +124,7 @@ const HomePage = async () => {
                     transition-colors duration-300
                   "
                 >
-                  <FileText className="w-5 h-5 transition-colors duration-300" />
+                  <FiFileText className="w-5 h-5 transition-colors duration-300" />
                   Resume
                 </a>
               </div>

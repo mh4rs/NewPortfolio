@@ -1,4 +1,3 @@
-import { Mail, Github, Linkedin } from "lucide-react";
 import Section from "@frontend/components/common/Section";
 import Heading from "@frontend/components/Heading";
 
