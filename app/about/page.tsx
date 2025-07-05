@@ -227,7 +227,7 @@ const AboutSection = async () => {
           >
             <strong>Lead Author:</strong> A Spatiotemporal Machine Learning Framework for
             Ecologically-informed Bird Sighting Prediction  
-            <span className="text-gray-600 dark:text-gray-400 text-xs"> (Submitted to SMC, status: waiting)</span>
+            <span className="text-gray-600 dark:text-gray-400 text-xs"> (Submitted to SMC, status: <span className="text-green-600 dark:text-green-400 font-semibold">accepted!</span>;)</span>
           </a>
           <a 
             href="/_EIT_25__Robin.pdf" 
@@ -238,7 +238,7 @@ const AboutSection = async () => {
             <strong>Co-Author:</strong> Robin: An Intelligent Bird Observation Application
             for the Visually Impaired and K-12 Education
             <span className="text-gray-600 dark:text-gray-400 text-xs">
-              (Submitted to EIT, status: <span className="text-green-600 dark:text-green-400 font-semibold">accepted</span>)
+              (Submitted to EIT, status: <span className="text-green-600 dark:text-green-400 font-semibold">accepted!</span>)
             </span>
           </a>
         </div>
